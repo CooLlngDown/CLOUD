@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Security Builder</title>
+</head>
+<body>
+    <h1>✅ Cloud Security Report</h1>
+
+    <h2>📦 Public S3 Buckets</h2>
+    <ul>
+    {% for b in s3 %}
+        <li>{{ b.Bucket }} — Public: {{ b.Public }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>👤 IAM Users Without MFA</h2>
+    <ul>
+    {% for u in iam %}
+        <li>{{ u.User }} — MFA Enabled: {{ u.MFA_Enabled }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>🔓 Security Groups Open to World</h2>
+    <ul>
+    {% for g in sg %}
+        <li>{{ g.Group }} — Open Ports: {{ g.OpenToWorld }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
