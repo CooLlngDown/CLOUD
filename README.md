@@ -11,10 +11,15 @@ Cloud Security Builder là một ứng dụng Python đơn giản giúp kiểm t
 Cài đặt yêu cầu
 - Python 3.8+
 - Docker (để chạy LocalStack)
+
 pip install -r requirements.txt
+
 pip install localstack awscli-local
+
 localstack start
+
 python init_localstack_data.py
+
 python app.py
 
 http://localhost:5000
